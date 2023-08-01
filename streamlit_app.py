@@ -66,7 +66,7 @@ my_data_row = my_cur.fetchall()
 streamlit.header('the fruit load list contain:')
 #snowflake related function
 def get_fruit_load_list():
-    with my_cnx.cursor as my_cur:
+    with  my_cnx.cursor as my_cur:
         my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
         return my_cur.fetchall()
 
@@ -74,7 +74,7 @@ def get_fruit_load_list():
 if streamlit.button('Get Fruit Load List'):
  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
  my_data_row=get_fruit_load_list()
- streamlit.datafram(my_data_row)
+ streamlit.dataframe(my_data_row)
 
 
 
