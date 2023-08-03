@@ -95,6 +95,7 @@ if streamlit.button('Add a  Fruit to the List'):
 
 
 #allow the end user to add a fruit to the list
+streamlit.header('View Our Fruit-List-Add Your Faviorts')
 def insert_row_snowflake(new_fruit):
     with my_cnx.cursor() as my_cur:
         my_cur.execute("insert into fruit_load_list values ('" + kiwi + "')")
